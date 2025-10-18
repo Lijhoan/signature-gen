@@ -78,7 +78,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
         Colores de Texto
       </h3>
 
-      <div style={{ display: "flex", gap: "15px", marginBottom: "15px", alignItems: "center" }}>
+      <div className="color-control-row" style={{ display: "flex", gap: "15px", marginBottom: "15px", alignItems: "center" }}>
         <div style={{ flex: 1 }}>
           <label className="label">Color Nombre</label>
           <input
@@ -103,7 +103,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
         </div>
       </div>
 
-      <div style={{ display: "flex", gap: "15px", marginBottom: "15px", alignItems: "center" }}>
+      <div className="color-control-row" style={{ display: "flex", gap: "15px", marginBottom: "15px", alignItems: "center" }}>
         <div style={{ flex: 1 }}>
           <label className="label">Color Cargo</label>
           <input
@@ -128,7 +128,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
         </div>
       </div>
 
-      <div style={{ display: "flex", gap: "15px", marginBottom: "20px", alignItems: "center" }}>
+      <div className="color-control-row" style={{ display: "flex", gap: "15px", marginBottom: "20px", alignItems: "center" }}>
         <div style={{ flex: 1 }}>
           <label className="label">Color Contacto</label>
           <input
@@ -157,7 +157,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
         Personalización de Línea
       </h3>
 
-      <div style={{ display: "flex", gap: "15px", marginBottom: "15px", alignItems: "center" }}>
+      <div className="color-control-row" style={{ display: "flex", gap: "15px", marginBottom: "15px", alignItems: "center" }}>
         <div style={{ flex: 1 }}>
           <label className="label">Color línea</label>
           <input
@@ -182,7 +182,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
         </div>
       </div>
 
-      <div style={{ display: "flex", gap: "20px", marginBottom: "10px" }}>
+      <div className="slider-control-row" style={{ display: "flex", gap: "20px", marginBottom: "10px" }}>
         <div style={{ flex: 1 }}>
           <label className="label">Grosor línea: {styles.lineWidth}px</label>
           <input
@@ -209,7 +209,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
         </div>
       </div>
 
-      <div style={{ display: "flex", gap: "20px", marginBottom: "10px" }}>
+      <div className="slider-control-row" style={{ display: "flex", gap: "20px", marginBottom: "10px" }}>
         <div style={{ flex: 1 }}>
           <label className="label">Redondeo línea: {styles.borderRadiusLine}px</label>
           <input
@@ -224,7 +224,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
         </div>
       </div>
 
-      <div style={{ display: "flex", gap: "20px", marginBottom: "10px" }}>
+      <div className="slider-control-row" style={{ display: "flex", gap: "20px", marginBottom: "10px" }}>
         <div style={{ flex: 1 }}>
           <label className="label">Tamaño imagen: {styles.imageSize}px</label>
           <input
@@ -251,7 +251,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
         </div>
       </div>
 
-      <div style={{ display: "flex", gap: "20px", marginBottom: "20px" }}>
+      <div className="slider-control-row" style={{ display: "flex", gap: "20px", marginBottom: "20px" }}>
         <div style={{ flex: 1 }}>
           <label className="label">Posición X: {styles.imagePositionX}%</label>
           <input

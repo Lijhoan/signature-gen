@@ -66,12 +66,14 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
             fontFamily: styles.fontFamily,
             fontSize: "14px",
             lineHeight: 1.5,
-            margin: "0",
+            margin: "0 auto",
             padding: "20px",
             width: "fit-content",
+            maxWidth: "100%",
             border: "1px solid #e0e0e0",
             borderRadius: "8px",
             backgroundColor: "#ffffff",
+            overflow: "auto",
           }}
         >
           <table
