@@ -144,89 +144,72 @@ function App() {
 
   const [copySuccess, setCopySuccess] = useState(false);
 
-  const copyHTML = () => {
+  const copyHTML = async () => {
     const signatureNode = document.getElementById("signature-container");
     if (!signatureNode) return;
 
-    // URL base FIJA para GitHub Pages - HTTPS público para Gmail/Outlook
-    const baseUrl = 'https://lijhoan.github.io/signature-gen';
-    
-    // Convertir la imagen a URL absoluta HTTPS
-    let imageUrl = data.imagen;
-    if (imageUrl && imageUrl.startsWith('/signature-gen/')) {
-      imageUrl = baseUrl + imageUrl.replace('/signature-gen', '');
-    } else if (imageUrl && imageUrl.startsWith('/')) {
-      imageUrl = baseUrl + imageUrl;
-    }
+    try {
+      // URL base FIJA para GitHub Pages - HTTPS público para Gmail/Outlook
+      const baseUrl = 'https://lijhoan.github.io/signature-gen';
+      
+      // Clonar el nodo para modificar las URLs sin afectar la vista
+      const signatureClone = signatureNode.cloneNode(true);
+      
+      // Convertir todas las imágenes a URLs absolutas HTTPS
+      const images = signatureClone.querySelectorAll('img');
+      images.forEach(img => {
+        const src = img.getAttribute('src');
+        if (src && src.startsWith('/signature-gen/')) {
+          img.setAttribute('src', baseUrl + src.replace('/signature-gen', ''));
+        } else if (src && src.startsWith('/')) {
+          img.setAttribute('src', baseUrl + src);
+        }
+      });
 
-    // Crear HTML con estilos inline para máxima compatibilidad con clientes de correo
-    const fullHTML = `
-      <table cellpadding="0" cellspacing="0" border="0" style="font-family: ${styles.fontFamily}; font-size: 14px; line-height: 1.5; color: #000000;">
-        <tr>
-          <td style="padding-right: 20px; vertical-align: top;">
-            ${data.imagen ? `<img src="${imageUrl}" alt="${data.nombre}" width="${styles.imageSize}" height="${styles.imageSize}" style="border-radius: ${styles.borderRadius}%; object-fit: cover; border: 2px solid ${styles.lineColor}; display: block;" />` : ''}
-          </td>
-          <td style="border-left: ${styles.lineWidth}px solid ${styles.lineColor}; border-radius: ${styles.borderRadiusLine}px; padding-left: 20px; padding-top: 8px; padding-bottom: 8px; vertical-align: top;">
-            <div>
-              <strong style="font-size: 17px; color: ${styles.colorNombre}; display: block; margin-bottom: 4px; font-weight: 700;">
-                ${data.nombre}
-              </strong>
-              <span style="color: ${styles.colorCargo}; font-weight: 500; display: block; margin-bottom: 8px;">
-                ${data.cargo}
-              </span>
-              ${Object.keys(socialNetworks)
-                .filter((key) => socialNetworks[key].enabled)
-                .map((key) => {
-                  const network = socialNetworks[key];
-                  const iconUrl = iconSets[iconStyle][key];
-                  let href = network.url;
-                  
-                  // Generar href correcto según tipo
-                  if (network.type === "phone") {
-                    href = `https://wa.me/${network.url.replace(/[^0-9]/g, "")}`;
-                  } else if (network.type === "email") {
-                    href = `mailto:${network.url}`;
-                  } else if (!network.url.startsWith('http')) {
-                    href = `https://${network.url}`;
-                  }
-                  
-                  // Texto a mostrar
-                  let displayText = network.url;
-                  if (network.type === "url") {
-                    const customTexts = {
-                      linkedin: "linkedin.com/in/lijhoanmc",
-                      website: "Mi Blog Personal",
-                      github: "github.com/Lijhoan",
-                      instagram: "Ver en Instagram",
-                      facebook: "Facebook",
-                      twitter: "Sígueme en X",
-                      youtube: "Mi Canal de YouTube",
-                      tiktok: "TikTok",
-                      telegram: "Telegram",
-                    };
-                    displayText = customTexts[key] || network.url.replace(/^https?:\/\/(www\.)?/, "").split('/')[0];
-                  }
-                  
-                  return `
-                <div style="display: flex; align-items: center; margin-bottom: 4px;">
-                  <img src="${iconUrl}" alt="${network.label}" width="16" height="16" style="margin-right: 8px; display: inline-block; vertical-align: middle;" />
-                  <a href="${href}" ${network.type === "url" ? 'target="_blank"' : ''} style="color: ${styles.colorContacto}; text-decoration: none; display: inline-block;">
-                    ${displayText}
-                  </a>
-                </div>`;
-                })
-                .join('')}
-            </div>
-          </td>
-        </tr>
-      </table>
-    `.trim();
+      // Obtener el HTML renderizado
+      const htmlContent = signatureClone.outerHTML;
+      
+      // Crear blobs para HTML y texto plano
+      const htmlBlob = new Blob([htmlContent], { type: 'text/html' });
+      const textBlob = new Blob([signatureClone.innerText], { type: 'text/plain' });
 
-    // Copiar al portapapeles
-    navigator.clipboard.writeText(fullHTML).then(() => {
+      // Crear ClipboardItem con ambos formatos (para compatibilidad)
+      const clipboardItem = new ClipboardItem({
+        'text/html': htmlBlob,
+        'text/plain': textBlob
+      });
+
+      // Copiar al portapapeles usando la API moderna
+      await navigator.clipboard.write([clipboardItem]);
+      
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2500);
-    });
+    } catch (error) {
+      // Fallback para navegadores que no soporten ClipboardItem
+      console.log("Fallback a método tradicional", error);
+      try {
+        const baseUrl = 'https://lijhoan.github.io/signature-gen';
+        const signatureClone = signatureNode.cloneNode(true);
+        
+        const images = signatureClone.querySelectorAll('img');
+        images.forEach(img => {
+          const src = img.getAttribute('src');
+          if (src && src.startsWith('/signature-gen/')) {
+            img.setAttribute('src', baseUrl + src.replace('/signature-gen', ''));
+          } else if (src && src.startsWith('/')) {
+            img.setAttribute('src', baseUrl + src);
+          }
+        });
+        
+        const htmlString = signatureClone.outerHTML;
+        await navigator.clipboard.writeText(htmlString);
+        
+        setCopySuccess(true);
+        setTimeout(() => setCopySuccess(false), 2500);
+      } catch (fallbackError) {
+        console.error("Error al copiar:", fallbackError);
+      }
+    }
   };
 
   return (

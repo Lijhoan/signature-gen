@@ -61,107 +61,127 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
         <div
           id="signature-container"
           style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "20px",
             fontFamily: styles.fontFamily,
             fontSize: "14px",
             lineHeight: 1.5,
+            margin: "0",
+            padding: "0",
           }}
         >
-          {data.imagen && (
-            <img
-              src={data.imagen}
-              alt={data.nombre}
-              width={styles.imageSize}
-              height={styles.imageSize}
-              style={{
-                borderRadius: `${styles.borderRadius}%`,
-                objectFit: "cover",
-                objectPosition: `${styles.imagePositionX}% ${styles.imagePositionY}%`,
-                border: `2px solid ${styles.lineColor}`,
-              }}
-            />
-          )}
-
-          <div
-            id="signature-content"
+          <table
             style={{
-              position: "relative",
-              paddingLeft: "20px",
+              borderCollapse: "collapse",
+              margin: "0",
+              padding: "0",
+              border: "none",
+              width: "auto",
             }}
           >
-            <div
-              style={{
-                position: "absolute",
-                left: 0,
-                top: 0,
-                bottom: 0,
-                width: `${styles.lineWidth}px`,
-                backgroundColor: styles.lineColor,
-                borderRadius: `${styles.borderRadiusLine}px`,
-              }}
-            ></div>
-            <strong
-              style={{
-                fontSize: "17px",
-                color: styles.colorNombre,
-                display: "block",
-                marginBottom: "4px",
-                fontWeight: "700",
-              }}
-            >
-              {data.nombre}
-            </strong>
-
-            <span
-              style={{
-                color: styles.colorCargo,
-                fontWeight: "500",
-                display: "block",
-                marginBottom: "8px",
-              }}
-            >
-              {data.cargo}
-            </span>
-
-            {/* 👇 NUEVO: Renderizado dinámico de redes sociales */}
-            {Object.keys(socialNetworks)
-              .filter((key) => socialNetworks[key].enabled)
-              .map((key) => {
-                const network = socialNetworks[key];
-                const iconUrl = iconSets[iconStyle][key]; // 👈 Obtener icono según estilo seleccionado
-                return (
-                  <div
-                    key={key}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "8px",
-                      marginBottom: "4px",
-                    }}
-                  >
+            <tbody>
+              <tr style={{ border: "none" }}>
+                {/* Imagen */}
+                {data.imagen && (
+                  <td style={{ padding: "0", margin: "0", border: "none", verticalAlign: "top" }}>
                     <img
-                      src={iconUrl}
-                      alt={network.label}
-                      width="16"
-                      height="16"
-                    />
-                    <a
-                      href={getHref(network)}
-                      target={network.type === "url" ? "_blank" : undefined}
-                      rel={network.type === "url" ? "noopener noreferrer" : undefined}
+                      src={data.imagen}
+                      alt={data.nombre}
+                      width={styles.imageSize}
+                      height={styles.imageSize}
                       style={{
-                        color: styles.colorContacto,
-                        textDecoration: "none",
+                        borderRadius: `${styles.borderRadius}%`,
+                        objectFit: "cover",
+                        objectPosition: `${styles.imagePositionX}% ${styles.imagePositionY}%`,
+                        border: `2px solid ${styles.lineColor}`,
+                        display: "block",
+                      }}
+                    />
+                  </td>
+                )}
+
+                {/* Contenido */}
+                <td
+                  style={{
+                    padding: "0 0 0 20px",
+                    margin: "0",
+                    border: "none",
+                    borderLeft: `${styles.lineWidth}px solid ${styles.lineColor}`,
+                    borderRadius: `${styles.borderRadiusLine}px`,
+                    verticalAlign: "top",
+                    paddingLeft: "20px",
+                    paddingTop: "8px",
+                    paddingBottom: "8px",
+                  }}
+                >
+                  <div>
+                    <strong
+                      style={{
+                        fontSize: "17px",
+                        color: styles.colorNombre,
+                        display: "block",
+                        marginBottom: "4px",
+                        fontWeight: "700",
+                        margin: "0 0 4px 0",
                       }}
                     >
-                      {getDisplayText(network, key)}
-                    </a>
+                      {data.nombre}
+                    </strong>
+
+                    <p
+                      style={{
+                        color: styles.colorCargo,
+                        fontWeight: "500",
+                        margin: "0 0 8px 0",
+                        fontSize: "14px",
+                      }}
+                    >
+                      {data.cargo}
+                    </p>
+
+                    {/* Redes sociales */}
+                    {Object.keys(socialNetworks)
+                      .filter((key) => socialNetworks[key].enabled)
+                      .map((key) => {
+                        const network = socialNetworks[key];
+                        const iconUrl = iconSets[iconStyle][key];
+                        return (
+                          <div
+                            key={key}
+                            style={{
+                              margin: "0 0 4px 0",
+                              display: "block",
+                            }}
+                          >
+                            <img
+                              src={iconUrl}
+                              alt={network.label}
+                              width="16"
+                              height="16"
+                              style={{
+                                verticalAlign: "middle",
+                                marginRight: "8px",
+                                display: "inline",
+                              }}
+                            />
+                            <a
+                              href={getHref(network)}
+                              target={network.type === "url" ? "_blank" : undefined}
+                              rel={network.type === "url" ? "noopener noreferrer" : undefined}
+                              style={{
+                                color: styles.colorContacto,
+                                textDecoration: "none",
+                                display: "inline",
+                              }}
+                            >
+                              {getDisplayText(network, key)}
+                            </a>
+                          </div>
+                        );
+                      })}
                   </div>
-                );
-              })}
-          </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
