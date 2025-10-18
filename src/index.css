@@ -406,6 +406,15 @@ body {
     font-size: 0.8rem;
     padding: 0.4rem 1.2rem;
   }
+
+  /* Tarjeta de contacto responsive */
+  .contact-card-buttons {
+    flex-direction: column !important;
+  }
+
+  .contact-card-buttons a {
+    min-width: 100% !important;
+  }
 }
 
 /* Landscape móviles */
@@ -459,6 +468,320 @@ body {
 
   .signature-header p {
     font-size: 1.2rem;
+  }
+}
+
+/* ========================================
+   ESTILOS PARA INSTRUCTIVO DE INSTALACIÓN
+   ======================================== */
+
+/* Estilos para los acordeones de instrucciones */
+details {
+  transition: all 0.3s ease;
+}
+
+details:hover {
+  box-shadow: 0 2px 8px rgba(67, 71, 163, 0.1);
+  transform: translateX(2px);
+}
+
+details[open] {
+  background: linear-gradient(135deg, rgba(228, 58, 112, 0.02), rgba(67, 71, 163, 0.02)) !important;
+  border-color: rgba(67, 71, 163, 0.3) !important;
+}
+
+details summary {
+  list-style: none;
+  outline: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::after {
+  content: "▼";
+  float: right;
+  transition: transform 0.3s ease;
+  color: #4347a3;
+}
+
+details[open] summary::after {
+  transform: rotate(-180deg);
+}
+
+/* Responsive para el instructivo */
+@media (max-width: 768px) {
+  details {
+    padding: 10px 12px !important;
+  }
+
+  details summary {
+    font-size: 0.9rem !important;
+  }
+
+  details ol {
+    font-size: 0.85rem !important;
+    padding-left: 18px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  details {
+    padding: 8px 10px !important;
+  }
+
+  details summary {
+    font-size: 0.85rem !important;
+  }
+
+  details ol {
+    font-size: 0.8rem !important;
+    padding-left: 16px !important;
+    margin-top: 8px !important;
+  }
+
+  details ol li {
+    margin-bottom: 6px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: INSTRUCTIVO Y TARJETA DE CONTACTO
+   ======================================== */
+
+/* Instructivo de instalación */
+.installation-guide {
+  margin-top: 25px;
+  padding: 20px;
+}
+
+.installation-guide h4 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Tarjeta de contacto */
+.contact-card {
+  margin-top: 25px;
+  padding: 25px;
+}
+
+.contact-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-card-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Tablets y medianas (max-width: 768px) */
+@media (max-width: 768px) {
+  .installation-guide {
+    padding: 18px;
+    margin-top: 20px;
+  }
+
+  .installation-guide h4 {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+
+  .contact-card {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .contact-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .contact-card p {
+    font-size: 0.9rem;
+  }
+
+  .contact-card-buttons {
+    gap: 10px;
+  }
+}
+
+/* Móviles (max-width: 480px) */
+@media (max-width: 480px) {
+  .installation-guide {
+    padding: 15px;
+    margin-top: 18px;
+    border-radius: 10px;
+  }
+
+  .installation-guide h4 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .installation-guide details {
+    padding: 10px 12px !important;
+  }
+
+  .installation-guide details summary {
+    font-size: 0.85rem !important;
+    flex-wrap: wrap;
+  }
+
+  .installation-guide details ol {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .installation-guide p {
+    font-size: 0.8rem !important;
+    margin-top: 12px !important;
+  }
+
+  /* Tarjeta de contacto en móvil */
+  .contact-card {
+    padding: 18px;
+    margin-top: 18px;
+    border-radius: 12px;
+  }
+
+  .contact-card h4 {
+    font-size: 1rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .contact-card p {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .contact-card-buttons {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .contact-card-buttons a {
+    width: 100% !important;
+    min-width: 100% !important;
+    padding: 12px 16px !important;
+    font-size: 0.9rem !important;
+    justify-content: center !important;
+  }
+
+  .contact-card-buttons svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  /* Patrón decorativo más pequeño */
+  .contact-card > div:first-child {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  /* Badge y iconos */
+  .contact-card .badge {
+    font-size: 0.7rem !important;
+    padding: 4px 10px !important;
+  }
+
+  .contact-card .icon-container {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .contact-card .icon-container span {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* Móviles muy pequeños (max-width: 360px) */
+@media (max-width: 360px) {
+  .installation-guide {
+    padding: 12px;
+    margin-top: 15px;
+  }
+
+  .installation-guide h4 {
+    font-size: 0.85rem;
+  }
+
+  .installation-guide details {
+    padding: 8px 10px !important;
+  }
+
+  .installation-guide details summary {
+    font-size: 0.8rem !important;
+  }
+
+  .installation-guide details ol {
+    font-size: 0.75rem !important;
+  }
+
+  .contact-card {
+    padding: 15px;
+  }
+
+  .contact-card h4 {
+    font-size: 0.95rem !important;
+  }
+
+  .contact-card p {
+    font-size: 0.8rem !important;
+  }
+
+  .contact-card-buttons a {
+    padding: 10px 14px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Landscape móviles */
+@media (max-height: 600px) and (orientation: landscape) {
+  .installation-guide {
+    padding: 15px;
+    margin-top: 15px;
+  }
+
+  .installation-guide h4 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .installation-guide details {
+    padding: 8px 12px !important;
+  }
+
+  .contact-card {
+    padding: 18px;
+    margin-top: 15px;
+  }
+
+  .contact-card h4 {
+    font-size: 1rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .contact-card p {
+    font-size: 0.85rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .contact-card-buttons {
+    flex-direction: row !important;
+    gap: 8px !important;
+  }
+
+  .contact-card-buttons a {
+    width: auto !important;
+    min-width: auto !important;
+    flex: 1;
   }
 }
 

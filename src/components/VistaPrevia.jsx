@@ -244,6 +244,339 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
         Copiar Firma HTML
       </button>
 
+      {/* 📧 Instructivo de Instalación */}
+      <div className="installation-guide" style={{
+        marginTop: "25px",
+        padding: "20px",
+        background: "linear-gradient(135deg, rgba(228, 58, 112, 0.05), rgba(67, 71, 163, 0.05))",
+        borderRadius: "12px",
+        border: "1px solid rgba(228, 58, 112, 0.15)",
+      }}>
+        <h4 style={{
+          color: "var(--secondary)",
+          fontSize: "1rem",
+          fontWeight: 700,
+          marginBottom: "15px",
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+        }}>
+          <span style={{ fontSize: "1.2rem" }}>📧</span>
+          ¿Cómo agregar mi firma al correo?
+        </h4>
+        
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          {/* Gmail */}
+          <details style={{
+            background: "white",
+            padding: "12px 15px",
+            borderRadius: "8px",
+            cursor: "pointer",
+            transition: "all 0.3s ease",
+            border: "1px solid #e0e0e0",
+          }}>
+            <summary style={{
+              fontWeight: 600,
+              color: "#4347a3",
+              fontSize: "0.95rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+            }}>
+              <span style={{ fontSize: "1.1rem" }}>📬</span> Gmail
+            </summary>
+            <ol style={{
+              marginTop: "10px",
+              paddingLeft: "20px",
+              fontSize: "0.9rem",
+              lineHeight: "1.6",
+              color: "#4c4f4c",
+            }}>
+              <li>Copia la firma (botón de arriba)</li>
+              <li>Ve a <strong>Configuración ⚙️</strong> → <strong>Ver toda la configuración</strong></li>
+              <li>Busca la sección <strong>"Firma"</strong></li>
+              <li>Click en <strong>"Crear nueva"</strong></li>
+              <li><strong>Pega</strong> (Ctrl+V / Cmd+V) directamente</li>
+              <li>Guarda cambios al final de la página</li>
+            </ol>
+          </details>
+
+          {/* Outlook */}
+          <details style={{
+            background: "white",
+            padding: "12px 15px",
+            borderRadius: "8px",
+            cursor: "pointer",
+            transition: "all 0.3s ease",
+            border: "1px solid #e0e0e0",
+          }}>
+            <summary style={{
+              fontWeight: 600,
+              color: "#4347a3",
+              fontSize: "0.95rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+            }}>
+              <span style={{ fontSize: "1.1rem" }}>📨</span> Outlook
+            </summary>
+            <ol style={{
+              marginTop: "10px",
+              paddingLeft: "20px",
+              fontSize: "0.9rem",
+              lineHeight: "1.6",
+              color: "#4c4f4c",
+            }}>
+              <li>Copia la firma</li>
+              <li>Abre <strong>Archivo</strong> → <strong>Opciones</strong></li>
+              <li>Click en <strong>"Correo"</strong> → <strong>"Firmas"</strong></li>
+              <li>Click en <strong>"Nuevo"</strong>, dale un nombre</li>
+              <li><strong>Pega</strong> en el editor de firma</li>
+              <li>Haz click en <strong>"Aceptar"</strong></li>
+            </ol>
+          </details>
+
+          {/* Apple Mail */}
+          <details style={{
+            background: "white",
+            padding: "12px 15px",
+            borderRadius: "8px",
+            cursor: "pointer",
+            transition: "all 0.3s ease",
+            border: "1px solid #e0e0e0",
+          }}>
+            <summary style={{
+              fontWeight: 600,
+              color: "#4347a3",
+              fontSize: "0.95rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+            }}>
+              <span style={{ fontSize: "1.1rem" }}>🍎</span> Apple Mail
+            </summary>
+            <ol style={{
+              marginTop: "10px",
+              paddingLeft: "20px",
+              fontSize: "0.9rem",
+              lineHeight: "1.6",
+              color: "#4c4f4c",
+            }}>
+              <li>Copia la firma</li>
+              <li>Abre <strong>Mail</strong> → <strong>Preferencias</strong></li>
+              <li>Ve a la pestaña <strong>"Firmas"</strong></li>
+              <li>Click en <strong>"+"</strong> para crear nueva</li>
+              <li><strong>Pega</strong> tu firma</li>
+              <li>Cierra para guardar</li>
+            </ol>
+          </details>
+        </div>
+
+        <p style={{
+          marginTop: "15px",
+          fontSize: "0.85rem",
+          color: "#666",
+          textAlign: "center",
+          fontStyle: "italic",
+        }}>
+          💡 <strong>Tip:</strong> Asegúrate de pegar con formato (Ctrl+V). Si no funciona, intenta Ctrl+Shift+V
+        </p>
+      </div>
+
+      {/* 💼 Tarjeta de Contacto Profesional */}
+      <div className="contact-card" style={{
+        marginTop: "25px",
+        padding: "25px",
+        background: "linear-gradient(135deg, #4347a3 0%, #e43a70 100%)",
+        borderRadius: "16px",
+        boxShadow: "0 10px 30px rgba(228, 58, 112, 0.25)",
+        position: "relative",
+        overflow: "hidden",
+      }}>
+        {/* Patrón decorativo de fondo */}
+        <div style={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          width: "150px",
+          height: "150px",
+          background: "radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)",
+          borderRadius: "50%",
+          transform: "translate(30%, -30%)",
+        }}></div>
+
+        {/* Contenido */}
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+            marginBottom: "15px",
+          }}>
+            <div style={{
+              width: "50px",
+              height: "50px",
+              background: "rgba(255, 255, 255, 0.2)",
+              borderRadius: "12px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "24px",
+              backdropFilter: "blur(10px)",
+            }}>
+              ✨
+            </div>
+            <div>
+              <h4 style={{
+                color: "white",
+                fontSize: "1.2rem",
+                fontWeight: 700,
+                margin: 0,
+                marginBottom: "4px",
+              }}>
+                ¿Te gustó esta herramienta?
+              </h4>
+              <p style={{
+                color: "rgba(255, 255, 255, 0.9)",
+                fontSize: "0.9rem",
+                margin: 0,
+                fontWeight: 500,
+              }}>
+                Lleva tu marca al siguiente nivel 🚀
+              </p>
+            </div>
+          </div>
+
+          <p style={{
+            color: "rgba(255, 255, 255, 0.95)",
+            fontSize: "0.95rem",
+            lineHeight: "1.6",
+            marginBottom: "20px",
+          }}>
+            Soy <strong style={{ color: "#fff" }}>Ing. Lijhoan MC</strong>, especialista en <strong>diseño web</strong> y <strong>soluciones digitales personalizadas</strong>. 
+            Si necesitas una página web profesional, sistema a medida o automatización para tu negocio, ¡trabajemos juntos!
+          </p>
+
+          {/* Botones de contacto */}
+          <div className="contact-card-buttons" style={{
+            display: "flex",
+            gap: "12px",
+            flexWrap: "wrap",
+          }}>
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/51931347134?text=Hola%20Lijhoan,%20vi%20tu%20generador%20de%20firmas%20y%20me%20interesa%20trabajar%20contigo"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "12px 20px",
+                background: "#25D366",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "10px",
+                fontWeight: 600,
+                fontSize: "0.9rem",
+                transition: "all 0.3s ease",
+                boxShadow: "0 4px 15px rgba(37, 211, 102, 0.3)",
+                flex: "1",
+                minWidth: "140px",
+                justifyContent: "center",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = "translateY(-2px)";
+                e.target.style.boxShadow = "0 6px 20px rgba(37, 211, 102, 0.4)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = "translateY(0)";
+                e.target.style.boxShadow = "0 4px 15px rgba(37, 211, 102, 0.3)";
+              }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              WhatsApp
+            </a>
+
+            {/* Email */}
+            <a
+              href="mailto:lijhoan@gmail.com?subject=Consulta%20sobre%20Diseño%20Web&body=Hola%20Lijhoan,%0A%0AVi%20tu%20generador%20de%20firmas%20y%20me%20gustaría%20conversar%20sobre..."
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "12px 20px",
+                background: "rgba(255, 255, 255, 0.2)",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: "10px",
+                fontWeight: 600,
+                fontSize: "0.9rem",
+                transition: "all 0.3s ease",
+                border: "2px solid rgba(255, 255, 255, 0.3)",
+                backdropFilter: "blur(10px)",
+                flex: "1",
+                minWidth: "140px",
+                justifyContent: "center",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = "rgba(255, 255, 255, 0.3)";
+                e.target.style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = "rgba(255, 255, 255, 0.2)";
+                e.target.style.transform = "translateY(0)";
+              }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="M3 7l9 6 9-6"/>
+              </svg>
+              Email
+            </a>
+          </div>
+
+          {/* Badge profesional */}
+          <div style={{
+            marginTop: "15px",
+            padding: "10px 15px",
+            background: "rgba(255, 255, 255, 0.15)",
+            borderRadius: "8px",
+            backdropFilter: "blur(10px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "10px",
+            flexWrap: "wrap",
+          }}>
+            <span style={{ color: "white", fontSize: "0.85rem", fontWeight: 500 }}>
+              💻 Desarrollo Web
+            </span>
+            <span style={{ color: "rgba(255,255,255,0.6)" }}>•</span>
+            <span style={{ color: "white", fontSize: "0.85rem", fontWeight: 500 }}>
+              🎨 UI/UX Design
+            </span>
+            <span style={{ color: "rgba(255,255,255,0.6)" }}>•</span>
+            <span style={{ color: "white", fontSize: "0.85rem", fontWeight: 500 }}>
+              ⚡ Soluciones a Medida
+            </span>
+          </div>
+
+          {/* Número de teléfono */}
+          <p style={{
+            marginTop: "12px",
+            textAlign: "center",
+            color: "rgba(255, 255, 255, 0.9)",
+            fontSize: "0.85rem",
+            margin: "12px 0 0 0",
+          }}>
+            📞 <strong>+51 931 347 134</strong> | 📧 <strong>lijhoan@gmail.com</strong>
+          </p>
+        </div>
+      </div>
+
       <div className={`toast ${copySuccess ? "show" : ""}`}>
         Firma copiada correctamente
       </div>
