@@ -299,7 +299,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
 
       {/* 👇 NUEVO: Selector de estilo de iconos */}
       <h3 style={{ color: "var(--secondary)", marginBottom: "15px", marginTop: "25px", display: "flex", alignItems: "center", gap: "8px" }}>
-        <img src="https://img.icons8.com/fluency/24/paint-palette.png" alt="Palette" style={{ width: "24px", height: "24px" }} /> Estilo de Iconos
+        <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f3a8.png" alt="Palette" style={{ width: "24px", height: "24px" }} /> Estilo de Iconos
       </h3>
 
       <label className="label">Estilo:</label>
@@ -321,7 +321,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
             gap: "6px",
           }}
         >
-          <img src="https://img.icons8.com/fluency/18/paint-palette.png" alt="Color" style={{ width: "18px", height: "18px" }} /> Color
+          <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f3a8.png" alt="Color" style={{ width: "18px", height: "18px" }} /> Color
         </button>
         <button
           onClick={() => setIconStyle("black")}
@@ -340,7 +340,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
             gap: "6px",
           }}
         >
-          <img src="https://img.icons8.com/fluency/18/filled-circle.png" alt="Black" style={{ width: "18px", height: "18px", filter: "grayscale(100%) brightness(0)" }} /> Negro
+          <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/26ab.png" alt="Black" style={{ width: "18px", height: "18px" }} /> Negro
         </button>
         <button
           onClick={() => setIconStyle("white")}
@@ -359,7 +359,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
             gap: "6px",
           }}
         >
-          <img src="https://img.icons8.com/fluency/18/filled-circle.png" alt="White" style={{ width: "18px", height: "18px", filter: "brightness(2)" }} /> Blanco
+          <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/26aa.png" alt="White" style={{ width: "18px", height: "18px" }} /> Blanco
         </button>
       </div>
 

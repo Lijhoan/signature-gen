@@ -61,7 +61,7 @@ export default function ModalQR({ show, onClose, qrSrc }) {
 
         {/* Icono decorativo */}
         <div className="modal-emoji" style={{ marginBottom: "15px" }}>
-          <img src="https://img.icons8.com/fluency/48/party-popper.png" alt="Party" style={{ width: "48px", height: "48px" }} />
+          <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f389.png" alt="Party" style={{ width: "48px", height: "48px" }} />
         </div>
 
         {/* Título */}
@@ -77,7 +77,7 @@ export default function ModalQR({ show, onClose, qrSrc }) {
             lineHeight: 1.4,
           }}
         >
-          ¡Firma copiada con éxito! <img src="https://img.icons8.com/fluency/24/rocket.png" alt="Rocket" style={{ width: "24px", height: "24px", verticalAlign: "middle" }} />
+          ¡Firma copiada con éxito! <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f680.png" alt="Rocket" style={{ width: "24px", height: "24px", verticalAlign: "middle" }} />
         </h3>
 
         {/* Mensaje */}
@@ -92,7 +92,7 @@ export default function ModalQR({ show, onClose, qrSrc }) {
         >
           ¡La transformación digital empieza con tu firma digital!<br />
           <strong style={{ color: "#c7419f" }}>
-            Si te gustó la experiencia, Go tu Yape <img src="https://img.icons8.com/fluency/20/smartphone.png" alt="Phone" style={{ width: "20px", height: "20px", verticalAlign: "middle" }} /><img src="https://img.icons8.com/fluency/20/wink.png" alt="Wink" style={{ width: "20px", height: "20px", verticalAlign: "middle" }} /><img src="https://img.icons8.com/fluency/20/thumbs-up.png" alt="Thumbs" style={{ width: "20px", height: "20px", verticalAlign: "middle" }} />
+            Si te gustó la experiencia, Go tu Yape <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f4f1.png" alt="Phone" style={{ width: "20px", height: "20px", verticalAlign: "middle" }} /> <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f609.png" alt="Wink" style={{ width: "20px", height: "20px", verticalAlign: "middle" }} /> <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f44d.png" alt="Thumbs" style={{ width: "20px", height: "20px", verticalAlign: "middle" }} />
           </strong>
         </p>
 
@@ -128,7 +128,7 @@ export default function ModalQR({ show, onClose, qrSrc }) {
             fontStyle: "italic",
           }}
         >
-          La transformación digital empieza en tu correo <img src="https://img.icons8.com/fluency/18/email.png" alt="Email" style={{ width: "18px", height: "18px", verticalAlign: "middle" }} /><img src="https://img.icons8.com/fluency/18/star.png" alt="Star" style={{ width: "18px", height: "18px", verticalAlign: "middle" }} />
+          La transformación digital empieza en tu correo <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f4e7.png" alt="Email" style={{ width: "18px", height: "18px", verticalAlign: "middle" }} /> <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/2728.png" alt="Star" style={{ width: "18px", height: "18px", verticalAlign: "middle" }} />
         </p>
 
         {/* Botón de cerrar */}
@@ -159,7 +159,7 @@ export default function ModalQR({ show, onClose, qrSrc }) {
             e.target.style.boxShadow = "0 4px 15px rgba(199, 65, 159, 0.3)";
           }}
         >
-          ¡Entendido! <img src="https://img.icons8.com/fluency/20/thumbs-up.png" alt="Thumbs" style={{ width: "20px", height: "20px" }} />
+          ¡Entendido! <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f44d.png" alt="Thumbs" style={{ width: "20px", height: "20px" }} />
         </button>
       </div>
 
