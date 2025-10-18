@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Formulario from "./components/Formulario";
 import VistaPrevia from "./components/VistaPrevia";
+import ModalQR from "./components/ModalQR";
 import "./index.css";
 
 function App() {
@@ -144,6 +145,7 @@ function App() {
   });
 
   const [copySuccess, setCopySuccess] = useState(false);
+  const [showQR, setShowQR] = useState(false);
 
   const copyHTML = async () => {
     const signatureNode = document.getElementById("signature-container");
@@ -186,6 +188,15 @@ function App() {
       
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2500);
+
+      // 🎯 Mostrar modal QR solo UNA VEZ por sesión
+      const qrShownBefore = sessionStorage.getItem("qr_yape_shown");
+      if (!qrShownBefore) {
+        setTimeout(() => {
+          setShowQR(true);
+          sessionStorage.setItem("qr_yape_shown", "true");
+        }, 500); // Pequeño delay para mejor UX
+      }
     } catch (error) {
       console.error("Error con Clipboard API, intentando fallback...", error);
       
@@ -255,6 +266,13 @@ function App() {
           iconSets={iconSets}
         />
       </div>
+
+      {/* Modal QR Yape - Solo una vez por sesión */}
+      <ModalQR
+        show={showQR}
+        onClose={() => setShowQR(false)}
+        qrSrc="/signature-gen/yape.jpg"
+      />
     </div>
   );
 }
