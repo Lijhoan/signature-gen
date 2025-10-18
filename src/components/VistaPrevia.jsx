@@ -66,22 +66,32 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
             lineHeight: 1.5,
             margin: "0",
             padding: "0",
+            width: "fit-content",
           }}
         >
           <table
+            cellPadding="0"
+            cellSpacing="0"
             style={{
               borderCollapse: "collapse",
               margin: "0",
               padding: "0",
-              border: "none",
+              border: "0",
+              borderStyle: "none",
               width: "auto",
             }}
           >
             <tbody>
-              <tr style={{ border: "none" }}>
+              <tr style={{ border: "0", borderStyle: "none" }}>
                 {/* Imagen */}
                 {data.imagen && (
-                  <td style={{ padding: "0", margin: "0", border: "none", verticalAlign: "top" }}>
+                  <td style={{ 
+                    padding: "0 15px 0 0", 
+                    margin: "0", 
+                    border: "0",
+                    borderStyle: "none",
+                    verticalAlign: "top" 
+                  }}>
                     <img
                       src={data.imagen}
                       alt={data.nombre}
@@ -93,6 +103,8 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                         objectPosition: `${styles.imagePositionX}% ${styles.imagePositionY}%`,
                         border: `2px solid ${styles.lineColor}`,
                         display: "block",
+                        margin: "0",
+                        padding: "0",
                       }}
                     />
                   </td>
@@ -101,15 +113,13 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                 {/* Contenido */}
                 <td
                   style={{
-                    padding: "0 0 0 20px",
+                    padding: "5px 0 5px 15px",
                     margin: "0",
-                    border: "none",
+                    border: "0",
+                    borderStyle: "none",
                     borderLeft: `${styles.lineWidth}px solid ${styles.lineColor}`,
                     borderRadius: `${styles.borderRadiusLine}px`,
                     verticalAlign: "top",
-                    paddingLeft: "20px",
-                    paddingTop: "8px",
-                    paddingBottom: "8px",
                   }}
                 >
                   <div>
@@ -168,7 +178,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                               rel={network.type === "url" ? "noopener noreferrer" : undefined}
                               style={{
                                 color: styles.colorContacto,
-                                textDecoration: "none",
+                                textDecoration: "underline",
                                 display: "inline",
                               }}
                             >
