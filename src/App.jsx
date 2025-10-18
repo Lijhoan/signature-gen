@@ -166,27 +166,29 @@ function App() {
         }
       });
 
-      // Obtener el HTML renderizado
+      // 🔑 MÉTODO PRINCIPAL: Clipboard API moderna (como EDteam)
       const htmlContent = signatureClone.outerHTML;
+      const textContent = signatureClone.innerText;
       
-      // Crear blobs para HTML y texto plano
+      // Crear Blobs para HTML y texto plano
       const htmlBlob = new Blob([htmlContent], { type: 'text/html' });
-      const textBlob = new Blob([signatureClone.innerText], { type: 'text/plain' });
+      const textBlob = new Blob([textContent], { type: 'text/plain' });
 
-      // Crear ClipboardItem con ambos formatos (para compatibilidad)
+      // Crear ClipboardItem con ambos formatos
       const clipboardItem = new ClipboardItem({
         'text/html': htmlBlob,
         'text/plain': textBlob
       });
 
-      // Copiar al portapapeles usando la API moderna
+      // Copiar al portapapeles
       await navigator.clipboard.write([clipboardItem]);
       
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2500);
     } catch (error) {
-      // Fallback para navegadores que no soporten ClipboardItem
-      console.log("Fallback a método tradicional", error);
+      console.error("Error con Clipboard API, intentando fallback...", error);
+      
+      // FALLBACK: execCommand para navegadores antiguos
       try {
         const baseUrl = 'https://lijhoan.github.io/signature-gen';
         const signatureClone = signatureNode.cloneNode(true);
@@ -201,13 +203,27 @@ function App() {
           }
         });
         
-        const htmlString = signatureClone.outerHTML;
-        await navigator.clipboard.writeText(htmlString);
+        // Método antiguo: seleccionar y copiar
+        const tempDiv = document.createElement('div');
+        tempDiv.appendChild(signatureClone);
+        document.body.appendChild(tempDiv);
+        
+        const range = document.createRange();
+        range.selectNodeContents(tempDiv);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        
+        document.execCommand('copy');
+        
+        selection.removeAllRanges();
+        document.body.removeChild(tempDiv);
         
         setCopySuccess(true);
         setTimeout(() => setCopySuccess(false), 2500);
       } catch (fallbackError) {
-        console.error("Error al copiar:", fallbackError);
+        console.error("Error en todos los métodos de copiado:", fallbackError);
+        alert("No se pudo copiar la firma. Por favor, intenta con otro navegador.");
       }
     }
   };

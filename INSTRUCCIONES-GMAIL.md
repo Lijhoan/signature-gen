@@ -10,38 +10,38 @@
 
 **URL de la aplicación:** https://lijhoan.github.io/signature-gen/
 
-## 📝 Pasos para Configurar la Firma en Gmail
+## 📝 Pasos para Configurar la Firma en Gmail (MÉTODO DIRECTO)
 
 ### 1. Accede a tu Aplicación Web
 - Abre: https://lijhoan.github.io/signature-gen/
 - Personaliza tu firma (nombre, cargo, redes sociales, colores, etc.)
 
-### 2. Copia el HTML
+### 2. Copia la Firma
 - Haz clic en el botón **"Copiar Firma HTML"**
 - Verás el mensaje: "Firma copiada correctamente ✓"
 
-### 3. Configura en Gmail
+### 3. Pega DIRECTAMENTE en Gmail
 1. Ve a Gmail → **Configuración** (⚙️) → **Ver toda la configuración**
 2. Pestaña **"General"**
 3. Busca la sección **"Firma"**
 4. Haz clic en **"+ Crear nueva"**
 5. Dale un nombre a tu firma (ej: "Firma Profesional")
-6. En el editor de firma:
-   - Haz clic en el icono **"<>"** (Editar HTML) en la barra de herramientas
-   - **PEGA** el HTML que copiaste
-   - Haz clic nuevamente en **"<>"** para volver al modo visual
-7. Configura para qué correos se usará:
-   - **"Para correos nuevos:"** → Selecciona tu firma
-   - **"Al responder o reenviar:"** → Selecciona tu firma
-8. Desplázate hacia abajo y haz clic en **"Guardar cambios"**
-
-### 4. Verifica que Funcione
-1. Haz clic en **"Redactar"** nuevo correo
-2. Tu firma debería aparecer automáticamente con:
+6. **Haz clic dentro de la caja de edición de firma**
+7. **Pega con `Ctrl+V` (o `Cmd+V` en Mac)**
+8. La firma debería aparecer **inmediatamente renderizada** con:
    - ✅ Imagen redonda visible
    - ✅ Nombre y cargo con colores correctos
    - ✅ Iconos de redes sociales
-   - ✅ Enlaces funcionando al hacer clic
+   - ✅ Enlaces funcionando
+9. Configura cuándo usarla:
+   - **"Para correos nuevos:"** → Selecciona tu firma
+   - **"Al responder o reenviar:"** → Selecciona tu firma
+10. Haz clic en **"Guardar cambios"** al final de la página
+
+### 4. Verifica en un Nuevo Correo
+1. Haz clic en **"Redactar"**
+2. Tu firma aparecerá automáticamente al final del mensaje
+3. Todos los colores, imagen y enlaces deberían funcionar perfectamente
 
 ## 📧 Configuración en Outlook (Web)
 
@@ -56,13 +56,19 @@
 
 ### ❌ Si Gmail muestra HTML en texto plano:
 
-**Causa:** No usaste el modo "Editar HTML" del editor
+**Causa 1:** Tu navegador no soporta la Clipboard API moderna
 
 **Solución:**
-1. Borra el contenido de la firma en Gmail
-2. Haz clic en el icono **"<>"** PRIMERO
-3. PEGA el HTML
-4. Haz clic nuevamente en **"<>"** para salir del modo HTML
+1. Usa **Google Chrome**, **Microsoft Edge** o **Firefox** actualizado
+2. Asegúrate de estar usando **HTTPS** (https://lijhoan.github.io/signature-gen/)
+3. Si usas HTTP o localhost, la Clipboard API puede estar bloqueada
+
+**Causa 2:** Gmail detectó contenido no permitido
+
+**Solución:**
+1. NO uses el botón de "Editar HTML" (`<>`) en Gmail
+2. **Pega directamente** con `Ctrl+V` en la caja de edición
+3. Si aún así muestra código, copia → pega primero en un correo nuevo → vuelve a copiar desde ahí → pega en Configuración de Firma
 
 ### ❌ Si la imagen no se ve:
 
