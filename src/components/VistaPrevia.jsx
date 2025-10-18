@@ -29,9 +29,9 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
     if (network.type === "url") {
       // Textos personalizados por red social
       const customTexts = {
-        linkedin: "linkedin.com/in/lijhoanmc",
+        linkedin: "linkedin.\u200Bcom/in/lijhoanmc", // Zero-width space para romper auto-link
         website: "Mi Blog Personal",
-        github: "github.com/Lijhoan",
+        github: "github.\u200Bcom/Lijhoan",
         instagram: "Ver en Instagram",
         facebook: "Facebook",
         twitter: "Sígueme en X",
@@ -46,7 +46,9 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
       }
       
       // Si no, limpiar la URL (quitar https://, www., etc.)
-      return network.url.replace(/^https?:\/\/(www\.)?/, "").split('/')[0];
+      const cleanUrl = network.url.replace(/^https?:\/\/(www\.)?/, "").split('/')[0];
+      // Insertar zero-width space después del primer punto para romper auto-link
+      return cleanUrl.replace('.', '.\u200B');
     }
     
     return network.url;
@@ -65,8 +67,11 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
             fontSize: "14px",
             lineHeight: 1.5,
             margin: "0",
-            padding: "0",
+            padding: "20px",
             width: "fit-content",
+            border: "1px solid #e0e0e0",
+            borderRadius: "8px",
+            backgroundColor: "#ffffff",
           }}
         >
           <table
@@ -90,7 +95,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                     margin: "0", 
                     border: "0",
                     borderStyle: "none",
-                    verticalAlign: "top" 
+                    verticalAlign: "middle" 
                   }}>
                     <img
                       src={data.imagen}
@@ -105,21 +110,44 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                         display: "block",
                         margin: "0",
                         padding: "0",
+                        width: `${styles.imageSize}px`,
+                        height: `${styles.imageSize}px`,
+                        maxWidth: `${styles.imageSize}px`,
+                        maxHeight: `${styles.imageSize}px`,
                       }}
                     />
+                  </td>
+                )}
+
+                {/* Línea divisora */}
+                {data.imagen && (
+                  <td style={{
+                    padding: "0 10px",
+                    margin: "0",
+                    border: "0",
+                    borderStyle: "none",
+                    verticalAlign: "middle",
+                  }}>
+                    <div style={{
+                      width: `${styles.lineWidth}px`,
+                      height: `${styles.lineHeight}px`,
+                      backgroundColor: styles.lineColor,
+                      borderRadius: `${styles.borderRadiusLine}px`,
+                      margin: "0",
+                      padding: "0",
+                      display: "block",
+                    }}></div>
                   </td>
                 )}
 
                 {/* Contenido */}
                 <td
                   style={{
-                    padding: "5px 0 5px 15px",
+                    padding: "0 0 0 15px",
                     margin: "0",
                     border: "0",
                     borderStyle: "none",
-                    borderLeft: `${styles.lineWidth}px solid ${styles.lineColor}`,
-                    borderRadius: `${styles.borderRadiusLine}px`,
-                    verticalAlign: "top",
+                    verticalAlign: "middle",
                   }}
                 >
                   <div>
@@ -161,29 +189,40 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                               display: "block",
                             }}
                           >
-                            <img
-                              src={iconUrl}
-                              alt={network.label}
-                              width="16"
-                              height="16"
-                              style={{
-                                verticalAlign: "middle",
-                                marginRight: "8px",
-                                display: "inline",
-                              }}
-                            />
                             <a
                               href={getHref(network)}
                               target={network.type === "url" ? "_blank" : undefined}
                               rel={network.type === "url" ? "noopener noreferrer" : undefined}
                               style={{
-                                color: styles.colorContacto,
-                                textDecoration: "underline",
+                                textDecoration: "none",
+                                border: "none",
+                                outline: "none",
                                 display: "inline",
                               }}
                             >
-                              {getDisplayText(network, key)}
+                              <img
+                                src={iconUrl}
+                                alt={network.label}
+                                width="16"
+                                height="16"
+                                style={{
+                                  verticalAlign: "middle",
+                                  marginRight: "8px",
+                                  display: "inline",
+                                }}
+                              />
                             </a>
+                            <span style={{
+                              color: styles.colorContacto,
+                              display: "inline",
+                              verticalAlign: "middle",
+                              textDecoration: "none",
+                              pointerEvents: "none",
+                            }}>
+                              <span style={{ unicodeBidi: "bidi-override" }}>
+                                {getDisplayText(network, key)}
+                              </span>
+                            </span>
                           </div>
                         );
                       })}

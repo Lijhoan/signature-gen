@@ -129,8 +129,9 @@ function App() {
   });
 
   const [styles, setStyles] = useState({
-    lineColor: "#11212", // 👈 Color de la línea divisora
+    lineColor: "#cccccc", // 👈 Color de la línea divisora (gris claro visible)
     lineWidth: 6, // 👈 Grosor de la línea (6px)
+    lineHeight: 117, // 👈 Altura de la línea divisora (117px por defecto, igual a imageSize)
     colorNombre: "#c7419f", // 👈 Color del nombre
     colorCargo: "#4347a3",
     colorContacto: "#4c4f4c",

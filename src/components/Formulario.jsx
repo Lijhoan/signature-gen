@@ -196,6 +196,21 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
           />
         </div>
         <div style={{ flex: 1 }}>
+          <label className="label">Altura línea: {styles.lineHeight}px</label>
+          <input
+            type="range"
+            name="lineHeight"
+            min="30"
+            max="150"
+            value={styles.lineHeight}
+            onChange={handleStyleChange}
+            style={{ width: "100%" }}
+          />
+        </div>
+      </div>
+
+      <div style={{ display: "flex", gap: "20px", marginBottom: "10px" }}>
+        <div style={{ flex: 1 }}>
           <label className="label">Redondeo línea: {styles.borderRadiusLine}px</label>
           <input
             type="range"
