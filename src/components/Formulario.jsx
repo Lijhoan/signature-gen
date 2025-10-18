@@ -45,7 +45,7 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
   };
 
   return (
-    <div className="card" style={{ maxHeight: "85vh", overflowY: "auto" }}>
+    <div className="card" style={{ maxHeight: "none", overflowY: "auto", paddingBottom: "50px" }}>
       <h3 style={{ color: "var(--primary)", marginBottom: "15px" }}>
         Datos Personales
       </h3>
@@ -298,8 +298,8 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
       </select>
 
       {/* 👇 NUEVO: Selector de estilo de iconos */}
-      <h3 style={{ color: "var(--secondary)", marginBottom: "15px", marginTop: "25px" }}>
-        � Estilo de Iconos
+      <h3 style={{ color: "var(--secondary)", marginBottom: "15px", marginTop: "25px", display: "flex", alignItems: "center", gap: "8px" }}>
+        <img src="https://img.icons8.com/fluency/24/paint-palette.png" alt="Palette" style={{ width: "24px", height: "24px" }} /> Estilo de Iconos
       </h3>
 
       <label className="label">Estilo:</label>
@@ -315,9 +315,13 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
             cursor: "pointer",
             fontWeight: iconStyle === "color" ? "600" : "400",
             transition: "all 0.2s ease",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "6px",
           }}
         >
-          🎨 Color
+          <img src="https://img.icons8.com/fluency/18/paint-palette.png" alt="Color" style={{ width: "18px", height: "18px" }} /> Color
         </button>
         <button
           onClick={() => setIconStyle("black")}
@@ -330,9 +334,13 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
             cursor: "pointer",
             fontWeight: iconStyle === "black" ? "600" : "400",
             transition: "all 0.2s ease",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "6px",
           }}
         >
-          ⚫ Negro
+          <img src="https://img.icons8.com/fluency/18/filled-circle.png" alt="Black" style={{ width: "18px", height: "18px", filter: "grayscale(100%) brightness(0)" }} /> Negro
         </button>
         <button
           onClick={() => setIconStyle("white")}
@@ -345,14 +353,18 @@ const Formulario = ({ data, setData, socialNetworks, setSocialNetworks, styles, 
             cursor: "pointer",
             fontWeight: iconStyle === "white" ? "600" : "400",
             transition: "all 0.2s ease",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "6px",
           }}
         >
-          ⚪ Blanco
+          <img src="https://img.icons8.com/fluency/18/filled-circle.png" alt="White" style={{ width: "18px", height: "18px", filter: "brightness(2)" }} /> Blanco
         </button>
       </div>
 
-      <h3 style={{ color: "var(--secondary)", marginBottom: "15px", marginTop: "25px" }}>
-        🔗 Redes Sociales y Contacto
+      <h3 style={{ color: "var(--secondary)", marginBottom: "15px", marginTop: "25px", display: "flex", alignItems: "center", gap: "8px" }}>
+        <img src="https://img.icons8.com/fluency/24/link.png" alt="Link" style={{ width: "24px", height: "24px" }} /> Redes Sociales y Contacto
       </h3>
 
       {Object.keys(socialNetworks).map((key) => {

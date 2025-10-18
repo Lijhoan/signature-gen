@@ -38,11 +38,13 @@ body {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .card {
   flex: 1;
   min-width: 350px;
+  min-height: fit-content;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   padding: 30px;
@@ -410,10 +412,23 @@ body {
   /* Tarjeta de contacto responsive */
   .contact-card-buttons {
     flex-direction: column !important;
+    gap: 10px !important;
   }
 
   .contact-card-buttons a {
+    width: 100% !important;
     min-width: 100% !important;
+    max-width: 100% !important;
+    padding: 14px 18px !important;
+    font-size: 0.9rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .contact-card-buttons svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    flex-shrink: 0 !important;
   }
 }
 
@@ -675,8 +690,13 @@ details[open] summary::after {
   }
 
   .contact-card-buttons svg {
-    width: 18px !important;
-    height: 18px !important;
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    flex-shrink: 0 !important;
   }
 
   /* Patrón decorativo más pequeño */
@@ -739,6 +759,15 @@ details[open] summary::after {
   .contact-card-buttons a {
     padding: 10px 14px !important;
     font-size: 0.85rem !important;
+  }
+
+  .contact-card-buttons svg {
+    width: 14px !important;
+    height: 14px !important;
+    min-width: 14px !important;
+    min-height: 14px !important;
+    max-width: 14px !important;
+    max-height: 14px !important;
   }
 }
 

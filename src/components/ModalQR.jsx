@@ -19,6 +19,7 @@ export default function ModalQR({ show, onClose, qrSrc }) {
         zIndex: 9999,
         backdropFilter: "blur(4px)",
         animation: "fadeIn 0.3s ease",
+        padding: "15px",
       }}
       onClick={onClose}
     >
@@ -58,8 +59,10 @@ export default function ModalQR({ show, onClose, qrSrc }) {
           ×
         </button>
 
-        {/* Emoji decorativo */}
-        <div className="modal-emoji" style={{ fontSize: "48px", marginBottom: "15px" }}>🎉</div>
+        {/* Icono decorativo */}
+        <div className="modal-emoji" style={{ marginBottom: "15px" }}>
+          <img src="https://img.icons8.com/fluency/48/party-popper.png" alt="Party" style={{ width: "48px", height: "48px" }} />
+        </div>
 
         {/* Título */}
         <h3
@@ -74,7 +77,7 @@ export default function ModalQR({ show, onClose, qrSrc }) {
             lineHeight: 1.4,
           }}
         >
-          ¡Firma copiada con éxito! 🚀
+          ¡Firma copiada con éxito! <img src="https://img.icons8.com/fluency/24/rocket.png" alt="Rocket" style={{ width: "24px", height: "24px", verticalAlign: "middle" }} />
         </h3>
 
         {/* Mensaje */}
@@ -89,7 +92,7 @@ export default function ModalQR({ show, onClose, qrSrc }) {
         >
           ¡La transformación digital empieza con tu firma digital!<br />
           <strong style={{ color: "#c7419f" }}>
-            Si te gustó la experiencia, Go tu Yape 📲😉👍
+            Si te gustó la experiencia, Go tu Yape <img src="https://img.icons8.com/fluency/20/smartphone.png" alt="Phone" style={{ width: "20px", height: "20px", verticalAlign: "middle" }} /><img src="https://img.icons8.com/fluency/20/wink.png" alt="Wink" style={{ width: "20px", height: "20px", verticalAlign: "middle" }} /><img src="https://img.icons8.com/fluency/20/thumbs-up.png" alt="Thumbs" style={{ width: "20px", height: "20px", verticalAlign: "middle" }} />
           </strong>
         </p>
 
@@ -125,7 +128,7 @@ export default function ModalQR({ show, onClose, qrSrc }) {
             fontStyle: "italic",
           }}
         >
-          La transformación digital empieza en tu correo 📧✨
+          La transformación digital empieza en tu correo <img src="https://img.icons8.com/fluency/18/email.png" alt="Email" style={{ width: "18px", height: "18px", verticalAlign: "middle" }} /><img src="https://img.icons8.com/fluency/18/star.png" alt="Star" style={{ width: "18px", height: "18px", verticalAlign: "middle" }} />
         </p>
 
         {/* Botón de cerrar */}
@@ -142,6 +145,10 @@ export default function ModalQR({ show, onClose, qrSrc }) {
             cursor: "pointer",
             transition: "all 0.3s ease",
             boxShadow: "0 4px 15px rgba(199, 65, 159, 0.3)",
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            margin: "0 auto",
           }}
           onMouseEnter={(e) => {
             e.target.style.transform = "translateY(-2px)";
@@ -152,20 +159,8 @@ export default function ModalQR({ show, onClose, qrSrc }) {
             e.target.style.boxShadow = "0 4px 15px rgba(199, 65, 159, 0.3)";
           }}
         >
-          ¡Entendido! 👍
+          ¡Entendido! <img src="https://img.icons8.com/fluency/20/thumbs-up.png" alt="Thumbs" style={{ width: "20px", height: "20px" }} />
         </button>
-
-        {/* Mensaje final */}
-        <p
-          style={{
-            fontSize: "0.75rem",
-            color: "#aaa",
-            marginTop: "15px",
-            marginBottom: 0,
-          }}
-        >
-          Este mensaje aparece solo una vez por sesión
-        </p>
       </div>
 
       <style>
@@ -193,14 +188,15 @@ export default function ModalQR({ show, onClose, qrSrc }) {
               min-width: 90% !important;
               max-width: 95% !important;
               padding: 30px 20px 20px !important;
-              margin: 10px;
+              margin: 0 !important;
             }
           }
 
           @media (max-width: 480px) {
             /* Ajustes para móviles pequeños */
             .modal-content {
-              padding: 25px 15px 18px !important;
+              min-width: 92% !important;
+              padding: 25px 15px 20px !important;
               border-radius: 16px !important;
             }
 
@@ -227,9 +223,10 @@ export default function ModalQR({ show, onClose, qrSrc }) {
               font-size: 0.95rem !important;
             }
 
-            /* Emoji decorativo más pequeño */
-            .modal-emoji {
-              font-size: 40px !important;
+            /* Icono decorativo más pequeño */
+            .modal-emoji img {
+              width: 40px !important;
+              height: 40px !important;
             }
           }
 
@@ -237,7 +234,8 @@ export default function ModalQR({ show, onClose, qrSrc }) {
             /* Dispositivos muy pequeños */
             .modal-content {
               min-width: 95% !important;
-              padding: 20px 12px 15px !important;
+              max-width: 95% !important;
+              padding: 20px 12px 18px !important;
             }
 
             .modal-content h3 {
@@ -259,8 +257,12 @@ export default function ModalQR({ show, onClose, qrSrc }) {
             }
 
             .modal-emoji {
-              font-size: 32px !important;
               margin-bottom: 10px !important;
+            }
+
+            .modal-emoji img {
+              width: 32px !important;
+              height: 32px !important;
             }
 
             .modal-content h3 {

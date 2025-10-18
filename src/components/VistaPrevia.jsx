@@ -244,7 +244,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
         Copiar Firma HTML
       </button>
 
-      {/* 📧 Instructivo de Instalación */}
+      {/* Instructivo de Instalación */}
       <div className="installation-guide" style={{
         marginTop: "25px",
         padding: "20px",
@@ -261,7 +261,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
           alignItems: "center",
           gap: "8px",
         }}>
-          <span style={{ fontSize: "1.2rem" }}>📧</span>
+          <img src="https://img.icons8.com/fluency/22/info.png" alt="Info" style={{ width: "22px", height: "22px" }} />
           ¿Cómo agregar mi firma al correo?
         </h4>
         
@@ -283,7 +283,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
               alignItems: "center",
               gap: "8px",
             }}>
-              <span style={{ fontSize: "1.1rem" }}>📬</span> Gmail
+              <img src="https://img.icons8.com/color/20/gmail-new.png" alt="Gmail" style={{ width: "20px", height: "20px" }} /> Gmail
             </summary>
             <ol style={{
               marginTop: "10px",
@@ -293,7 +293,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
               color: "#4c4f4c",
             }}>
               <li>Copia la firma (botón de arriba)</li>
-              <li>Ve a <strong>Configuración ⚙️</strong> → <strong>Ver toda la configuración</strong></li>
+              <li>Ve a <strong>Configuración</strong> <img src="https://img.icons8.com/fluency/16/settings.png" alt="Settings" style={{ width: "16px", height: "16px", verticalAlign: "middle" }} /> → <strong>Ver toda la configuración</strong></li>
               <li>Busca la sección <strong>"Firma"</strong></li>
               <li>Click en <strong>"Crear nueva"</strong></li>
               <li><strong>Pega</strong> (Ctrl+V / Cmd+V) directamente</li>
@@ -318,7 +318,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
               alignItems: "center",
               gap: "8px",
             }}>
-              <span style={{ fontSize: "1.1rem" }}>📨</span> Outlook
+              <img src="https://img.icons8.com/color/20/ms-outlook.png" alt="Outlook" style={{ width: "20px", height: "20px" }} /> Outlook
             </summary>
             <ol style={{
               marginTop: "10px",
@@ -353,7 +353,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
               alignItems: "center",
               gap: "8px",
             }}>
-              <span style={{ fontSize: "1.1rem" }}>🍎</span> Apple Mail
+              <img src="https://img.icons8.com/color/20/apple-mail.png" alt="Apple Mail" style={{ width: "20px", height: "20px" }} /> Apple Mail
             </summary>
             <ol style={{
               marginTop: "10px",
@@ -383,7 +383,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
         </p>
       </div>
 
-      {/* 💼 Tarjeta de Contacto Profesional */}
+      {/* Tarjeta de Contacto Profesional */}
       <div className="contact-card" style={{
         marginTop: "25px",
         padding: "25px",
@@ -424,7 +424,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
               fontSize: "24px",
               backdropFilter: "blur(10px)",
             }}>
-              ✨
+              <img src="https://img.icons8.com/fluency/30/star.png" alt="Star" style={{ width: "30px", height: "30px" }} />
             </div>
             <div>
               <h4 style={{
@@ -442,7 +442,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                 margin: 0,
                 fontWeight: 500,
               }}>
-                Lleva tu marca al siguiente nivel 🚀
+                Lleva tu marca al siguiente nivel <img src="https://img.icons8.com/fluency/18/rocket.png" alt="Rocket" style={{ width: "18px", height: "18px", verticalAlign: "middle" }} />
               </p>
             </div>
           </div>
@@ -552,15 +552,15 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
             flexWrap: "wrap",
           }}>
             <span style={{ color: "white", fontSize: "0.85rem", fontWeight: 500 }}>
-              💻 Desarrollo Web
+              <img src="https://img.icons8.com/fluency/16/laptop-coding.png" alt="Web" style={{ width: "16px", height: "16px", verticalAlign: "middle" }} /> Desarrollo Web
             </span>
             <span style={{ color: "rgba(255,255,255,0.6)" }}>•</span>
             <span style={{ color: "white", fontSize: "0.85rem", fontWeight: 500 }}>
-              🎨 UI/UX Design
+              <img src="https://img.icons8.com/fluency/16/design.png" alt="Design" style={{ width: "16px", height: "16px", verticalAlign: "middle" }} /> UI/UX Design
             </span>
             <span style={{ color: "rgba(255,255,255,0.6)" }}>•</span>
             <span style={{ color: "white", fontSize: "0.85rem", fontWeight: 500 }}>
-              ⚡ Soluciones a Medida
+              <img src="https://img.icons8.com/fluency/16/lightning-bolt.png" alt="Solutions" style={{ width: "16px", height: "16px", verticalAlign: "middle" }} /> Soluciones a Medida
             </span>
           </div>
 
@@ -572,7 +572,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
             fontSize: "0.85rem",
             margin: "12px 0 0 0",
           }}>
-            📞 <strong>+51 931 347 134</strong> | 📧 <strong>lijhoan@gmail.com</strong>
+            <img src="https://img.icons8.com/fluency/16/phone.png" alt="Phone" style={{ width: "16px", height: "16px", verticalAlign: "middle" }} /> <strong>+51 931 347 134</strong> | <img src="https://img.icons8.com/fluency/16/email.png" alt="Email" style={{ width: "16px", height: "16px", verticalAlign: "middle" }} /> <strong>lijhoan@gmail.com</strong>
           </p>
         </div>
       </div>
