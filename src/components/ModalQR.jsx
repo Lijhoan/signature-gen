@@ -122,13 +122,14 @@ export default function ModalQR({ show, onClose, qrSrc }) {
         {/* Texto adicional */}
         <p
           style={{
-            fontSize: "0.85rem",
+            fontSize: "0.8rem",
             color: "#888",
-            marginBottom: "20px",
+            marginBottom: "18px",
             fontStyle: "italic",
+            lineHeight: 1.5,
           }}
         >
-          La transformación digital empieza en tu correo <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f4e7.png" alt="Email" style={{ width: "18px", height: "18px", verticalAlign: "middle" }} /> <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/2728.png" alt="Star" style={{ width: "18px", height: "18px", verticalAlign: "middle" }} />
+          Tu Yape es 100% voluntario para seguir creando tools gratis para la comunidad. ¡Dale! 🚀✨
         </p>
 
         {/* Botón de cerrar */}
@@ -159,7 +160,7 @@ export default function ModalQR({ show, onClose, qrSrc }) {
             e.target.style.boxShadow = "0 4px 15px rgba(199, 65, 159, 0.3)";
           }}
         >
-          ¡Entendido! <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f44d.png" alt="Thumbs" style={{ width: "20px", height: "20px" }} />
+          ¡Gracias Sobrino! <img src="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@15.0.1/img/apple/64/1f44d.png" alt="Thumbs" style={{ width: "20px", height: "20px" }} /> Ya eres del Team Top
         </button>
       </div>
 
