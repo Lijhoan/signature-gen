@@ -148,28 +148,23 @@ function App() {
     const signatureNode = document.getElementById("signature-container");
     if (!signatureNode) return;
 
-    // Clonar el nodo para no modificar el original
-    const signatureClone = signatureNode.cloneNode(true);
-
-    // Obtener la URL base para imágenes (importante para producción)
-    const baseUrl = window.location.origin + window.location.pathname.replace(/\/$/, '');
+    // URL base FIJA para GitHub Pages - HTTPS público para Gmail/Outlook
+    const baseUrl = 'https://lijhoan.github.io/signature-gen';
     
-    // Procesar todas las imágenes para convertir rutas relativas a absolutas
-    const images = signatureClone.querySelectorAll('img');
-    images.forEach(img => {
-      const src = img.getAttribute('src');
-      if (src && src.startsWith('/')) {
-        // Convertir ruta relativa a absoluta
-        img.setAttribute('src', baseUrl + src);
-      }
-    });
+    // Convertir la imagen a URL absoluta HTTPS
+    let imageUrl = data.imagen;
+    if (imageUrl && imageUrl.startsWith('/signature-gen/')) {
+      imageUrl = baseUrl + imageUrl.replace('/signature-gen', '');
+    } else if (imageUrl && imageUrl.startsWith('/')) {
+      imageUrl = baseUrl + imageUrl;
+    }
 
     // Crear HTML con estilos inline para máxima compatibilidad con clientes de correo
     const fullHTML = `
       <table cellpadding="0" cellspacing="0" border="0" style="font-family: ${styles.fontFamily}; font-size: 14px; line-height: 1.5; color: #000000;">
         <tr>
           <td style="padding-right: 20px; vertical-align: top;">
-            ${data.imagen ? `<img src="${data.imagen.startsWith('/') ? baseUrl + data.imagen : data.imagen}" alt="${data.nombre}" width="${styles.imageSize}" height="${styles.imageSize}" style="border-radius: ${styles.borderRadius}%; object-fit: cover; border: 2px solid ${styles.lineColor}; display: block;" />` : ''}
+            ${data.imagen ? `<img src="${imageUrl}" alt="${data.nombre}" width="${styles.imageSize}" height="${styles.imageSize}" style="border-radius: ${styles.borderRadius}%; object-fit: cover; border: 2px solid ${styles.lineColor}; display: block;" />` : ''}
           </td>
           <td style="border-left: ${styles.lineWidth}px solid ${styles.lineColor}; border-radius: ${styles.borderRadiusLine}px; padding-left: 20px; padding-top: 8px; padding-bottom: 8px; vertical-align: top;">
             <div>
