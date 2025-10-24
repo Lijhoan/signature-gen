@@ -67,9 +67,9 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
             fontSize: "14px",
             lineHeight: 1.5,
             margin: "0",
-            padding: "20px",
-            width: "100%",
-            maxWidth: "600px",
+            padding: "10px",
+            width: "fit-content",
+            maxWidth: "100%",
             border: "1px solid #e0e0e0",
             borderRadius: "8px",
             backgroundColor: "#ffffff",
@@ -86,7 +86,8 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
               padding: "0",
               border: "0",
               borderStyle: "none",
-              width: "100%",
+              width: "auto",
+              maxWidth: "600px",
               textAlign: "left",
             }}
           >
@@ -95,7 +96,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                 {/* Imagen */}
                 {data.imagen && (
                   <td style={{ 
-                    padding: "0 15px 0 0", 
+                    padding: "0 8px 0 0", 
                     margin: "0", 
                     border: "0",
                     borderStyle: "none",
@@ -127,7 +128,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                 {/* Línea divisora */}
                 {data.imagen && (
                   <td style={{
-                    padding: "0 10px",
+                    padding: "0 6px",
                     margin: "0",
                     border: "0",
                     borderStyle: "none",
@@ -149,7 +150,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                 {/* Contenido */}
                 <td
                   style={{
-                    padding: "0 0 0 15px",
+                    padding: "0 0 0 8px",
                     margin: "0",
                     border: "0",
                     borderStyle: "none",
