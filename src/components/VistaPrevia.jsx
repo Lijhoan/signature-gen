@@ -66,14 +66,15 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
             fontFamily: styles.fontFamily,
             fontSize: "14px",
             lineHeight: 1.5,
-            margin: "0 auto",
+            margin: "0",
             padding: "20px",
-            width: "fit-content",
-            maxWidth: "100%",
+            width: "100%",
+            maxWidth: "600px",
             border: "1px solid #e0e0e0",
             borderRadius: "8px",
             backgroundColor: "#ffffff",
             overflow: "auto",
+            textAlign: "left",
           }}
         >
           <table
@@ -85,11 +86,12 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
               padding: "0",
               border: "0",
               borderStyle: "none",
-              width: "auto",
+              width: "100%",
+              textAlign: "left",
             }}
           >
             <tbody>
-              <tr style={{ border: "0", borderStyle: "none" }}>
+              <tr style={{ border: "0", borderStyle: "none", textAlign: "left" }}>
                 {/* Imagen */}
                 {data.imagen && (
                   <td style={{ 
@@ -97,7 +99,8 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                     margin: "0", 
                     border: "0",
                     borderStyle: "none",
-                    verticalAlign: "middle" 
+                    verticalAlign: "middle",
+                    textAlign: "left",
                   }}>
                     <img
                       src={data.imagen}
@@ -129,6 +132,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                     border: "0",
                     borderStyle: "none",
                     verticalAlign: "middle",
+                    textAlign: "left",
                   }}>
                     <div style={{
                       width: `${styles.lineWidth}px`,
@@ -150,9 +154,10 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                     border: "0",
                     borderStyle: "none",
                     verticalAlign: "middle",
+                    textAlign: "left",
                   }}
                 >
-                  <div>
+                  <div style={{ textAlign: "left" }}>
                     <strong
                       style={{
                         fontSize: "17px",
@@ -161,6 +166,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                         marginBottom: "4px",
                         fontWeight: "700",
                         margin: "0 0 4px 0",
+                        textAlign: "left",
                       }}
                     >
                       {data.nombre}
@@ -172,6 +178,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                         fontWeight: "500",
                         margin: "0 0 8px 0",
                         fontSize: "14px",
+                        textAlign: "left",
                       }}
                     >
                       {data.cargo}
@@ -189,6 +196,7 @@ const VistaPrevia = ({ data, socialNetworks, styles, onCopy, copySuccess, iconSt
                             style={{
                               margin: "0 0 4px 0",
                               display: "block",
+                              textAlign: "left",
                             }}
                           >
                             <a
